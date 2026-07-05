@@ -15,7 +15,7 @@ A [Pi](https://pi.dev) extension that lists all loaded skills grouped by source.
 ## Install
 
 ```bash
-pi install git:github.com/olsonjj/pi-list-skills
+pi install pi-list-skills
 ```
 
 Then `/reload` in Pi or restart.
