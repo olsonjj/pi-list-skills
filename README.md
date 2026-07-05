@@ -7,8 +7,8 @@ A [Pi](https://pi.dev) extension that lists all loaded skills grouped by source.
 - **`/list-skills` command** — interactive select UI showing skills grouped by where they came from
 - **`list_skills` tool** — LLM-callable tool that returns skills as structured markdown, grouped by source
 - **Source grouping** — skills are automatically organized by origin:
-  - Git repos (e.g., `github.com/mattpocock/pi-skills`)
-  - npm packages (e.g., `npm:pi-ollama-cloud`)
+  - Git repos (e.g., `github.com/user/pi-skills`)
+  - npm packages (e.g., `npm:pi-skill-package`)
   - Global skills (`~/.pi/agent/skills`, `~/.agents/skills`)
   - Project skills (`.pi/skills`, `.agents/skills`)
 
@@ -30,22 +30,48 @@ Or ask the agent: "what skills are loaded?"
 
 ## Example output
 
-```
-### github.com/mattpocock/pi-skills
+### `/list-skills` command (interactive select UI)
 
-- **grill-me** — A relentless interview to sharpen a plan or design.
-- **to-issues** — Break a plan, spec, or PRD into independently-grabbable issues.
-- **to-prd** — Turn the current conversation into a PRD.
+```
+Loaded Skills (5)
+
+── github.com/example/pi-skills ──
+  example-skill  —  An example skill from a git repository.
+  another-skill  —  Another example skill from a git repository.
+
+── npm:pi-example-package ──
+  packaged-skill  —  An example skill installed via npm.
+
+── Global (~/.pi/agent/skills) ──
+  global-skill  —  An example globally-installed skill.
+
+── Project (.pi/skills) ──
+  project-skill  —  An example project-level skill.
+```
+
+Selecting a skill shows its name, description, and file location.
+
+### `list_skills` tool (LLM-callable, returns markdown)
+
+```
+## Loaded Skills (5)
+
+### github.com/example/pi-skills
+
+- **example-skill** — An example skill from a git repository.
+- **another-skill** — Another example skill from a git repository.
+
+### npm:pi-example-package
+
+- **packaged-skill** — An example skill installed via npm.
 
 ### Global (~/.pi/agent/skills)
 
-- **pi-sandbox** — Runs Pi inside an isolated throwaway Docker container.
-- **vercel-cli-with-tokens** — Deploy and manage projects on Vercel.
+- **global-skill** — An example globally-installed skill.
 
-### Global (~/.agents/skills)
+### Project (.pi/skills)
 
-- **deploy-to-vercel** — Deploy applications and websites to Vercel.
-- **find-skills** — Helps discover and install agent skills.
+- **project-skill** — An example project-level skill.
 ```
 
 ## License
