@@ -1,6 +1,6 @@
 {
   "name": "pi-list-skills",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Pi extension that lists all loaded skills grouped by source (git repo, npm, global, project)",
   "license": "MIT",
   "keywords": ["pi-package", "pi", "pi-extension", "skills"],
