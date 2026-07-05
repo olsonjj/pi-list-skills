@@ -1,10 +1,19 @@
 {
   "name": "pi-list-skills",
   "version": "1.0.0",
-  "description": "Pi extension that lists all loaded skills with their descriptions and locations",
+  "description": "Pi extension that lists all loaded skills grouped by source (git repo, npm, global, project)",
   "license": "MIT",
-  "keywords": ["pi", "pi-extension", "skills"],
+  "keywords": ["pi-package", "pi", "pi-extension", "skills"],
+  "author": "John Olson",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olsonjj/pi-list-skills.git"
+  },
   "pi": {
     "extensions": ["./src/index.ts"]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
   }
 }
