@@ -1,0 +1,10 @@
+{
+  "name": "pi-list-skills",
+  "version": "1.0.0",
+  "description": "Pi extension that lists all loaded skills with their descriptions and locations",
+  "license": "MIT",
+  "keywords": ["pi", "pi-extension", "skills"],
+  "pi": {
+    "extensions": ["./src/index.ts"]
+  }
+}
